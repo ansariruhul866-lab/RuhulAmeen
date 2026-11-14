@@ -3,9 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { PROJECTS, CATEGORIES } from '@/content/projects';
-import { WorkCard } from '@/components/ui/WorkCard';
-import { ThumbnailMasonryGallery } from '@/components/ui/ThumbnailMasonryGallery';
-import { VideoMasonryGallery } from '@/components/ui/VideoMasonryGallery';
+import { MasterMasonryGallery } from '@/components/ui/MasterMasonryGallery';
 import { CategoryKey } from '@/types';
 import { VideoModal } from '@/components/ui/VideoModal';
 
@@ -24,25 +22,25 @@ export default function WorkPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-[var(--accent,#E5262B)]/10 text-[var(--accent,#E5262B)] border border-[var(--accent,#E5262B)]/20">
           Curated Proof of Work
         </div>
-        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-neutral-900 dark:text-white">
-          Engineered for Retention. Built for Conversions.
+        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white font-display">
+          WORK.
         </h1>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-          Explore production client work across video editing, 3D thumbnails, modern web applications, programmatic SEO, and AI workflow automation. Every project is anchored in quantifiable impact: Problem, Action, and verifiable Result.
+        <p className="text-base sm:text-lg text-neutral-400 leading-relaxed font-sans">
+          A dynamic, living mosaic of high-retention video reels, 3D thumbnails, production web applications, and autonomous AI systems. Hover any video to isolate playback, or click any piece to inspect in 4K.
         </p>
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap gap-2 pt-4 border-b border-black/10 dark:border-white/10 pb-6">
+      <div className="flex flex-wrap gap-2 pt-4 border-b border-white/10 pb-6">
         <button
           onClick={() => setSelectedCategory('all')}
           className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all ${
             selectedCategory === 'all'
-              ? 'bg-[var(--accent,#E5262B)] text-white shadow-md'
-              : 'bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white'
+              ? 'bg-[var(--accent,#E5262B)] text-white shadow-lg shadow-[var(--accent,#E5262B)]/30 font-bold scale-105'
+              : 'bg-white/5 text-neutral-400 hover:text-white border border-white/10'
           }`}
         >
-          All Domains ({PROJECTS.length})
+          All Deployments ({PROJECTS.length})
         </button>
         {CATEGORIES.map((cat) => {
           const count = PROJECTS.filter((p) => p.category === cat.key).length;
@@ -52,8 +50,8 @@ export default function WorkPage() {
               onClick={() => setSelectedCategory(cat.key)}
               className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all ${
                 selectedCategory === cat.key
-                  ? 'bg-[var(--accent,#E5262B)] text-white shadow-md'
-                  : 'bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white'
+                  ? 'bg-[var(--accent,#E5262B)] text-white shadow-lg shadow-[var(--accent,#E5262B)]/30 font-bold scale-105'
+                  : 'bg-white/5 text-neutral-400 hover:text-white border border-white/10'
               }`}
             >
               {cat.name} ({count})
@@ -62,45 +60,32 @@ export default function WorkPage() {
         })}
       </div>
 
-      {/* Projects Grid or Dedicated Masonry Gallery for Thumbnails & Videos */}
-      {selectedCategory === 'thumbnail' ? (
-        <ThumbnailMasonryGallery projects={filteredProjects} />
-      ) : selectedCategory === 'video' ? (
-        <VideoMasonryGallery
-          projects={filteredProjects}
-          onOpenVideo={(url, title) => setActiveVideo({ url, title })}
-        />
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <WorkCard
-              key={project.id}
-              project={project}
-              onOpenVideo={(url, title) => setActiveVideo({ url, title })}
-            />
-          ))}
-        </div>
-      )}
+      {/* Unified Master Masonry Gallery with Random Interleaved Tiles */}
+      <MasterMasonryGallery
+        projects={filteredProjects}
+        isShuffled={selectedCategory === 'all'}
+        onOpenVideo={(url, title) => setActiveVideo({ url, title })}
+      />
 
       {/* Bottom Cross-Sell CTA */}
-      <div className="p-8 md:p-12 rounded-3xl border border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-[#0c1017] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div>
-          <h2 className="text-2xl font-bold text-neutral-900 dark:text-white">
-            Have a project outside these categories?
+      <div className="p-8 md:p-12 rounded-3xl border border-white/10 bg-neutral-950/80 backdrop-blur-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
+        <div className="space-y-2">
+          <h2 className="text-2xl font-bold text-white">
+            Have a custom cross-domain project?
           </h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2 max-w-xl">
-            My hybrid background allows cross-pollinating skills—such as automated video clipping tools or 3D interactive web experiences that boost conversion.
+          <p className="text-sm text-neutral-400 max-w-xl leading-relaxed">
+            I unite high-retention video packaging with modern software engineering—building high-converting client funnels, 3D web applications, and automated video workflows.
           </p>
         </div>
         <Link
           href="/contact"
-          className="px-6 py-3 rounded-full bg-[var(--accent,#E5262B)] text-white font-bold text-sm uppercase tracking-wider hover:bg-[var(--accent-hover,#ff3338)] transition-colors whitespace-nowrap"
+          className="px-6 py-3.5 rounded-full bg-[var(--accent,#E5262B)] text-white font-bold text-xs font-mono uppercase tracking-wider hover:bg-[var(--accent-hover,#ff3338)] transition-all hover:scale-105 shadow-xl shadow-[var(--accent,#E5262B)]/30 whitespace-nowrap"
         >
           Schedule Discovery Call
         </Link>
       </div>
 
-      {/* Video Modal Player */}
+      {/* Full-Screen Video Modal Player */}
       {activeVideo && (
         <VideoModal
           url={activeVideo.url}
