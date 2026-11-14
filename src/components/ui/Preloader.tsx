@@ -16,17 +16,16 @@ export function Preloader() {
       } catch {
         // Storage might be restricted
       }
-    }, 450);
+    }, 400);
   }, []);
 
   useEffect(() => {
-    // Check if query param or session storage disables preloader
+    // Check if already viewed in this browsing session or testing with query param
     try {
-      if (typeof window !== 'undefined' && window.location.search.includes('nopreloader')) {
-        setVisible(false);
-        return;
-      }
-      if (sessionStorage.getItem('ruhul_preloader_shown') === 'true') {
+      if (
+        sessionStorage.getItem('ruhul_preloader_shown') === 'true' ||
+        window.location.search.includes('nopreload=true')
+      ) {
         setVisible(false);
         return;
       }
@@ -34,34 +33,29 @@ export function Preloader() {
       // Ignore storage errors
     }
 
-    // Smooth counter from 0 to 100 over ~1.8 seconds
-    const duration = 1800;
+    // Smooth counter from 0 to 100 over ~1.6 seconds
+    const duration = 1600;
     const startTime = performance.now();
 
-    const updateCounter = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
+    const interval = setInterval(() => {
+      const elapsed = performance.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out quad
       const eased = 1 - (1 - progress) * (1 - progress);
       const currentCount = Math.floor(eased * 100);
 
       setCount(currentCount);
 
-      if (progress < 1) {
-        requestAnimationFrame(updateCounter);
-      } else {
-        setTimeout(dismiss, 200);
+      if (progress >= 1) {
+        clearInterval(interval);
+        setTimeout(dismiss, 150);
       }
-    };
+    }, 25);
 
-    const animId = requestAnimationFrame(updateCounter);
-
-    // Escape or any key / click skips preloader immediately
     const handleKeyDown = () => dismiss();
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      cancelAnimationFrame(animId);
+      clearInterval(interval);
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [dismiss]);
@@ -73,53 +67,38 @@ export function Preloader() {
       onClick={dismiss}
       role="status"
       aria-live="polite"
-      className={`fixed inset-0 z-[100] flex flex-col justify-between p-8 md:p-16 bg-[#0A0A0B] text-white transition-opacity duration-500 cursor-pointer ${
+      className={`fixed inset-0 z-[100] flex flex-col justify-between p-8 md:p-14 bg-[#0A0A0B] text-white transition-opacity duration-500 cursor-pointer ${
         fading ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
-      {/* Top Header */}
-      <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-neutral-500">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[var(--accent,#E5262B)] animate-pulse" />
-          <span className="text-white font-display font-bold">RUHUL AMEEN.</span>
+      {/* Top-Left Huge Counter - Matching Reference Board Panel 1 */}
+      <div className="flex items-start justify-between">
+        <div className="flex items-baseline font-mono font-black text-5xl sm:text-7xl md:text-8xl tracking-tighter text-white">
+          <span>{count}</span>
+          <span className="text-2xl sm:text-4xl text-[var(--accent,#E5262B)] font-sans ml-1">%</span>
         </div>
-        <span>SYSTEM LOADING</span>
+        <div className="text-[11px] font-mono uppercase tracking-widest text-neutral-500 pt-2 hidden sm:block">
+          ESC / CLICK TO SKIP
+        </div>
       </div>
 
-      {/* Center Cinematic Message */}
-      <div className="max-w-2xl space-y-4">
-        <div className="text-3xl sm:text-5xl md:text-6xl font-display font-black tracking-tighter leading-none">
-          ENGINEERING{' '}
-          <span className="text-[var(--accent,#E5262B)] accent-text-glow">
-            ATTENTION
+      {/* Center Tagline with Accent Keyword - Exactly Matching Reference Board Panel 1 */}
+      <div className="text-center px-4">
+        <p className="font-mono text-xs sm:text-sm md:text-base uppercase tracking-[0.25em] text-neutral-200">
+          EVERY CLICK DRIVES REAL{' '}
+          <span className="text-[var(--accent,#E5262B)] font-bold accent-text-glow">
+            GROWTH
           </span>
-          <br />
-          &amp; CODE.
-        </div>
-        <p className="text-xs sm:text-sm font-mono text-neutral-400 tracking-wider">
-          Social Media Management • 4K Video Retention • Next.js 3D Apps
         </p>
       </div>
 
-      {/* Bottom Counter & Skip Cue */}
-      <div className="space-y-4">
-        {/* Progress bar line */}
-        <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+      {/* Bottom Subtle Progress Line */}
+      <div className="w-full">
+        <div className="w-full h-0.5 bg-white/10 rounded-full overflow-hidden">
           <div
             className="h-full bg-[var(--accent,#E5262B)] transition-all duration-75 shadow-lg shadow-[var(--accent-glow)]"
             style={{ width: `${count}%` }}
           />
-        </div>
-
-        <div className="flex items-center justify-between font-mono text-xs">
-          <div className="flex items-baseline gap-1 text-2xl sm:text-4xl font-black font-display text-white">
-            <span>{count}</span>
-            <span className="text-sm font-normal text-[var(--accent,#E5262B)]">%</span>
-          </div>
-
-          <div className="text-[11px] text-neutral-500 tracking-wider uppercase">
-            Click anywhere or press [ESC] to skip
-          </div>
         </div>
       </div>
     </div>

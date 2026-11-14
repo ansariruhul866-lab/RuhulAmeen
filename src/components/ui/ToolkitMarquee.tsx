@@ -50,9 +50,6 @@ export function ToolkitMarquee() {
     <div className="space-y-12">
       {/* Skill Chips Strip */}
       <div className="space-y-4">
-        <div className="text-xs font-mono uppercase tracking-widest text-neutral-400">
-          Core Competencies &amp; Technical Capabilities
-        </div>
         <div className="flex flex-wrap gap-2.5">
           {skillChips.map((chip, idx) => (
             <span
@@ -66,14 +63,10 @@ export function ToolkitMarquee() {
       </div>
 
       {/* Marquee Header */}
-      <div className="space-y-2">
-        <div className="text-xs font-mono uppercase tracking-widest text-[var(--accent,#E5262B)] font-bold">
-          Production Hardware &amp; Software
-        </div>
-        <h2 className="text-3xl md:text-5xl font-display font-black text-white tracking-tight">
-          MY TOOLKIT.
-        </h2>
-      </div>
+      <h2 className="text-4xl md:text-6xl font-display font-black text-white tracking-tight">
+        MY TOOLKIT.
+      </h2>
+
 
       {/* Two Opposite-Direction Infinite Marquee Rows */}
       <div className="space-y-4 overflow-hidden relative py-2">

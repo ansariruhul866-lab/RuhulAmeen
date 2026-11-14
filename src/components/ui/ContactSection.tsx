@@ -34,17 +34,9 @@ export function ContactSection() {
 
   return (
     <div className="space-y-12">
-      <div className="space-y-2">
-        <div className="text-xs font-mono uppercase tracking-widest text-[var(--accent,#E5262B)] font-bold">
-          Start A Conversation
-        </div>
-        <h2 className="text-3xl md:text-5xl font-display font-black text-white tracking-tight">
-          CONTACT.
-        </h2>
-        <p className="text-sm text-neutral-400 max-w-xl">
-          Direct collaboration with Ruhul. Rapid turnarounds, clean communication, and verified retention/conversion multiples.
-        </p>
-      </div>
+      <h2 className="text-4xl md:text-6xl font-display font-black text-white tracking-tight">
+        CONTACT.
+      </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left Column: Direct Fast Channels */}

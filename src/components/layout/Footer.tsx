@@ -4,8 +4,8 @@ import { CATEGORIES } from '@/content/projects';
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-[#08080a]/95 backdrop-blur-2xl text-neutral-400 py-16 px-4 sm:px-6 md:px-12 w-full max-w-full overflow-hidden transition-colors">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 min-w-0">
+    <footer className="relative border-t border-white/10 bg-[#08080a]/95 backdrop-blur-2xl text-neutral-400 py-16 px-6 md:px-12 transition-colors">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
         {/* Bio & Location */}
         <div className="md:col-span-5 space-y-4">
           <div className="flex items-center gap-2 text-xl font-black text-white tracking-tighter">
@@ -42,29 +42,29 @@ export function Footer() {
         </div>
 
         {/* Quick Links & Direct Connect */}
-        <div className="md:col-span-4 space-y-4 min-w-0">
+        <div className="md:col-span-4 space-y-4">
           <h4 className="text-xs font-mono uppercase tracking-wider text-white font-bold">
             Initiate Collaboration
           </h4>
           <p className="text-sm text-neutral-300">
             Have a project or want to revamp your digital footprint? Let&apos;s engineer something memorable.
           </p>
-          <div className="pt-1 flex flex-col sm:flex-row flex-wrap gap-2.5">
+          <div className="pt-1 flex flex-wrap gap-3">
             <Link
               href="mailto:ruhulansari7786@gmail.com"
-              className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-white/15 bg-white/5 hover:border-[var(--accent,#E5262B)] text-xs font-mono font-medium text-white transition-colors truncate max-w-full"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/15 bg-white/5 hover:border-[var(--accent,#E5262B)] text-xs font-mono font-medium text-white transition-colors"
             >
-              <Mail className="w-3.5 h-3.5 text-[var(--accent,#E5262B)] shrink-0" />
-              <span className="truncate">ruhulansari7786@gmail.com</span>
+              <Mail className="w-3.5 h-3.5 text-[var(--accent,#E5262B)]" />
+              <span>ruhulansari7786@gmail.com</span>
             </Link>
             <Link
               href="https://wa.me/919369389841?text=Hi%20Ruhul,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project!"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-[var(--accent,#E5262B)] text-white text-xs font-bold transition-opacity hover:opacity-90 shadow-md shadow-[var(--accent-glow)] truncate max-w-full"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[var(--accent,#E5262B)] text-white text-xs font-bold transition-opacity hover:opacity-90 shadow-md shadow-[var(--accent-glow)]"
             >
-              <span className="truncate">WhatsApp (+91 9369389841)</span>
-              <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+              <span>Instant WhatsApp (+91 9369389841)</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
           <div className="flex items-center gap-4 pt-4 text-xs font-mono text-neutral-400">

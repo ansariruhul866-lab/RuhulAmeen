@@ -24,14 +24,9 @@ export function AboutSection() {
 
   return (
     <div className="space-y-12">
-      <div className="space-y-2">
-        <div className="text-xs font-mono uppercase tracking-widest text-[var(--accent,#E5262B)] font-bold">
-          Creative Developer &amp; Video Producer
-        </div>
-        <h2 className="text-3xl md:text-5xl font-display font-black text-white tracking-tight">
-          ABOUT RUHUL.
-        </h2>
-      </div>
+      <h2 className="text-4xl md:text-6xl font-display font-black text-white tracking-tight">
+        ABOUT RUHUL.
+      </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         {/* Left Column: Glass Text Card with Skill Pills */}

@@ -71,9 +71,9 @@ export function WorkCardScroller({ projects, onOpenVideo, onOpenLightbox }: Work
   ];
 
   return (
-    <div className="space-y-8 w-full max-w-full min-w-0 overflow-hidden">
+    <div className="space-y-8">
       {/* Top Bar: 5-Category Filter Pills + Carousel Navigation Buttons */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6 w-full min-w-0">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
         {/* Category Tabs */}
         <div className="flex flex-wrap items-center gap-2">
           {categoriesList.map((cat) => (
@@ -115,13 +115,12 @@ export function WorkCardScroller({ projects, onOpenVideo, onOpenLightbox }: Work
         </div>
       </div>
 
-      {/* Horizontal Scroller Rail in strictly clipped container */}
-      <div className="w-full max-w-full min-w-0 overflow-x-hidden">
-        <div
-          ref={scrollerRef}
-          className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 pt-2 no-scrollbar scroll-smooth w-full min-w-0"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
+      {/* Horizontal Scroller Rail */}
+      <div
+        ref={scrollerRef}
+        className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 pt-2 no-scrollbar scroll-smooth"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
         {filteredProjects.map((project) => {
           const imageUrl = getDriveImageUrl(project.thumbnail);
           const isWebsite = project.category === 'web' || project.thumbnail.includes('/images/websites/');
@@ -264,7 +263,6 @@ export function WorkCardScroller({ projects, onOpenVideo, onOpenLightbox }: Work
             </article>
           );
         })}
-        </div>
       </div>
 
       {/* Progress Bar & Counter Strip */}
