@@ -110,8 +110,8 @@ export function WorkCard({ project, onOpenVideo }: WorkCardProps) {
           )}
         </div>
 
-        {/* 3-Part Proof Architecture with distinct contrast (Streamlined for thumbnails) */}
-        {project.category !== 'thumbnail' ? (
+        {/* Clean, Streamlined Details — No Problem/Action/Result text clutter on video or thumbnail cards */}
+        {project.category !== 'video' && project.category !== 'thumbnail' ? (
           <div className="space-y-2.5 text-xs text-neutral-300">
             <div>
               <span className="font-bold text-rose-400 uppercase tracking-wider">Problem: </span>
@@ -127,8 +127,8 @@ export function WorkCard({ project, onOpenVideo }: WorkCardProps) {
             </div>
           </div>
         ) : (
-          <div className="flex items-center justify-between p-3 rounded-xl bg-[var(--accent,#E5262B)]/10 border border-[var(--accent,#E5262B)]/25 text-xs">
-            <span className="font-mono text-neutral-400">Performance</span>
+          <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5 text-xs">
+            <span className="font-mono text-neutral-400">Verified Metric</span>
             <span className="font-bold text-[var(--accent,#E5262B)] font-mono">{project.result}</span>
           </div>
         )}

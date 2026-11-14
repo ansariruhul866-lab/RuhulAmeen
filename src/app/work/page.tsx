@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { PROJECTS, CATEGORIES } from '@/content/projects';
 import { WorkCard } from '@/components/ui/WorkCard';
 import { ThumbnailMasonryGallery } from '@/components/ui/ThumbnailMasonryGallery';
+import { VideoMasonryGallery } from '@/components/ui/VideoMasonryGallery';
 import { CategoryKey } from '@/types';
 import { VideoModal } from '@/components/ui/VideoModal';
 
@@ -61,9 +62,14 @@ export default function WorkPage() {
         })}
       </div>
 
-      {/* Projects Grid or Dedicated Thumbnail Masonry Gallery */}
+      {/* Projects Grid or Dedicated Masonry Gallery for Thumbnails & Videos */}
       {selectedCategory === 'thumbnail' ? (
         <ThumbnailMasonryGallery projects={filteredProjects} />
+      ) : selectedCategory === 'video' ? (
+        <VideoMasonryGallery
+          projects={filteredProjects}
+          onOpenVideo={(url, title) => setActiveVideo({ url, title })}
+        />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (

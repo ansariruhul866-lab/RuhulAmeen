@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Project } from '@/types';
-import { WorkCard } from './WorkCard';
+import { VideoMasonryGallery } from './VideoMasonryGallery';
 import { VideoModal } from './VideoModal';
 
 interface VideoProjectsGridProps {
@@ -14,15 +14,10 @@ export function VideoProjectsGrid({ projects }: VideoProjectsGridProps) {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((p) => (
-          <WorkCard
-            key={p.id}
-            project={p}
-            onOpenVideo={(url, title) => setActiveVideo({ url, title })}
-          />
-        ))}
-      </div>
+      <VideoMasonryGallery
+        projects={projects}
+        onOpenVideo={(url, title) => setActiveVideo({ url, title })}
+      />
 
       {activeVideo && (
         <VideoModal

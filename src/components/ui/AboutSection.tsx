@@ -8,18 +8,17 @@ import { playClickSound } from '@/lib/sound';
 
 export function AboutSection() {
   const skillPills = [
+    'CapCut PC',
+    'Antigravity',
+    'Canva PC',
+    'Web Development',
+    'AI Development',
+    'Marketing',
+    'Ads',
     'Video Editing',
-    '3D Thumbnails',
-    'Next.js 15',
-    'React 19',
-    'TypeScript',
-    'Tailwind CSS',
-    'Technical SEO',
-    'Python',
-    'Blender 3D',
-    'After Effects',
-    'Photoshop',
-    'CapCut Pro',
+    'SEO and Blogs',
+    'Content and AI',
+    'Gemini • Claude • ChatGPT',
   ];
 
   return (
