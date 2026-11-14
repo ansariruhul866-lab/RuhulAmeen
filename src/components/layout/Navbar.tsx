@@ -32,18 +32,18 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl transition-all duration-300">
-      <nav className="relative flex items-center justify-between px-5 py-2.5 rounded-full border border-white/12 bg-[#0c0c0f]/85 backdrop-blur-2xl shadow-2xl shadow-black/80">
+    <header className="fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-5xl transition-all duration-300">
+      <nav className="relative flex items-center justify-between px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/12 bg-[#0c0c0f]/85 backdrop-blur-2xl shadow-2xl shadow-black/80">
         {/* Brand Monogram */}
         <Link
           href="/"
-          className="group flex items-center gap-2.5 text-sm font-black tracking-tighter"
+          className="group flex items-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-black tracking-tighter"
           onMouseEnter={playHoverSound}
           onClick={playClickSound}
         >
-          <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent,#E5262B)] group-hover:scale-125 transition-transform shadow-md shadow-[var(--accent-glow)]" />
-          <span className="tracking-tight text-white font-display text-base">RUHUL AMEEN</span>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-neutral-400 font-mono hidden sm:inline-block border border-white/5">
+          <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[var(--accent,#E5262B)] group-hover:scale-125 transition-transform shadow-md shadow-[var(--accent-glow)] shrink-0" />
+          <span className="tracking-tight text-white font-display text-xs sm:text-base">RUHUL AMEEN</span>
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-neutral-400 font-mono hidden md:inline-block border border-white/5">
             LUCKNOW
           </span>
         </Link>
@@ -69,13 +69,13 @@ export function Navbar() {
           })}
         </div>
 
-        {/* Right Actions: Sound + Single Accent "Hire me" CTA */}
-        <div className="flex items-center gap-3">
-          {/* Sound Toggle */}
+        {/* Right Actions: Sound (desktop) + Single Accent "Hire me" CTA + Hamburger */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Sound Toggle (desktop) */}
           <button
             onClick={toggleSound}
             aria-label={soundOn ? 'Disable audio feedback' : 'Enable audio feedback'}
-            className="p-1.5 rounded-full text-neutral-400 hover:text-white transition-colors"
+            className="hidden sm:flex p-1.5 rounded-full text-neutral-400 hover:text-white transition-colors"
             title={soundOn ? 'Sound: On' : 'Sound: Off'}
           >
             {soundOn ? (
@@ -90,7 +90,7 @@ export function Navbar() {
             href="/contact"
             onMouseEnter={playHoverSound}
             onClick={playClickSound}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[var(--accent,#E5262B)] hover:brightness-110 text-white text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-md shadow-[var(--accent-glow)] hover:scale-105"
+            className="inline-flex items-center gap-1 px-3 sm:px-4 py-1.5 rounded-full bg-[var(--accent,#E5262B)] hover:brightness-110 text-white text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-md shadow-[var(--accent-glow)] shrink-0"
           >
             <span>Hire me</span>
             <ArrowUpRight className="w-3 h-3" />
@@ -99,10 +99,10 @@ export function Navbar() {
           {/* Mobile menu hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-1.5 text-neutral-300 hover:text-white"
+            className="md:hidden p-1.5 text-neutral-300 hover:text-white shrink-0"
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
         </div>
       </nav>

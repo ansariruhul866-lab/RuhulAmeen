@@ -82,7 +82,7 @@ export default function RootLayout({
           <SmoothScroll />
           <CustomCursor />
           <Navbar />
-          <main className="min-h-screen pt-20">
+          <main className="min-h-screen pt-20 w-full max-w-full overflow-x-hidden">
             {children}
           </main>
           <Footer />

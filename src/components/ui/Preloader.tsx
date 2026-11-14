@@ -20,8 +20,12 @@ export function Preloader() {
   }, []);
 
   useEffect(() => {
-    // Check if already viewed in this browsing session
+    // Check if query param or session storage disables preloader
     try {
+      if (typeof window !== 'undefined' && window.location.search.includes('nopreloader')) {
+        setVisible(false);
+        return;
+      }
       if (sessionStorage.getItem('ruhul_preloader_shown') === 'true') {
         setVisible(false);
         return;
