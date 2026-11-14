@@ -237,84 +237,16 @@ export function CinematicHeroPanel() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/images/profile-cutout.png"
+                src="/images/profile-cutout.png?v=3"
                 alt="Ruhul Ameen"
                 fill
                 priority
+                unoptimized
                 sizes="(max-width: 640px) 170px, (max-width: 768px) 350px, 430px"
                 className="object-contain object-bottom filter contrast-[1.05] brightness-[1.02] drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
               />
             </div>
           </motion.div>
-
-          {/* -------------------------------------------------------- */}
-          {/* LAYER 3: FOREGROUND RED X GLASS SHARDS (Across Chest)    */}
-          {/* -------------------------------------------------------- */}
-          <motion.svg
-            initial={{ opacity: 0.3, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute right-0 top-0 w-full sm:w-[85%] md:w-[70%] h-full pointer-events-none z-20"
-            viewBox="0 0 700 620"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <linearGradient id="fgShardGlass" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.45" />
-                <stop offset="25%" stopColor="var(--accent, #E5262B)" stopOpacity="0.65" />
-                <stop offset="75%" stopColor="#800a0e" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#150102" stopOpacity="0.2" />
-              </linearGradient>
-            </defs>
-
-            {/* Slicing across suit chest & lapel (BELOW BEARD/FACE) */}
-            <polygon
-              points="190,490 440,410 570,455 290,560"
-              fill="url(#fgShardGlass)"
-              opacity="0.75"
-              style={{
-                transform: `translate(${mousePos.x * 15}px, ${mousePos.y * 10}px)`,
-              }}
-            />
-            {/* Top specular reflection rim line of foreground shard */}
-            <line
-              x1="190"
-              y1="490"
-              x2="440"
-              y2="410"
-              stroke="#ffffff"
-              strokeWidth="1.2"
-              opacity="0.85"
-            />
-            <line
-              x1="440"
-              y1="410"
-              x2="570"
-              y2="455"
-              stroke="var(--accent, #E5262B)"
-              strokeWidth="1.5"
-              opacity="0.9"
-            />
-
-            {/* Lower crossing facet across lower jacket */}
-            <polygon
-              points="340,540 500,470 590,510 420,590"
-              fill="var(--accent, #E5262B)"
-              opacity="0.32"
-              style={{
-                transform: `translate(${mousePos.x * 10}px, ${mousePos.y * 8}px)`,
-              }}
-            />
-            <line
-              x1="340"
-              y1="540"
-              x2="500"
-              y2="470"
-              stroke="rgba(255,255,255,0.6)"
-              strokeWidth="0.8"
-              opacity="0.75"
-            />
-          </motion.svg>
         </div>
 
         {/* ============================================================ */}

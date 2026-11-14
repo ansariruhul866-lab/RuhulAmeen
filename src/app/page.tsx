@@ -37,7 +37,7 @@ export default function HomePage() {
   const statsData = [
     { value: 4.2, suffix: 'M+', label: 'Organic Video Views', description: 'Generated across client reels, essays & shorts' },
     { value: 14.8, suffix: '%', label: 'Peak YouTube CTR', description: '3D depth & visual psychology benchmark' },
-    { value: 99, suffix: '/100', label: 'Lighthouse Performance', description: 'Sub-second speeds with zero layout shifts' },
+    { value: 10, suffix: '+', label: 'Production Platforms', description: 'Sub-second Next.js web applications in production' },
     { value: 68, suffix: '%', label: 'Conversion Lift', description: 'Verified jump in client inquiries and bookings' },
   ];
 
@@ -102,72 +102,12 @@ export default function HomePage() {
           </h2>
         </div>
 
-        {/* Dynamic Card Scroller */}
+        {/* Dynamic 3D Cylinder Card Scroller */}
         <WorkCardScroller
           projects={PROJECTS}
           onOpenVideo={(url, title) => setActiveVideo({ url, title })}
           onOpenLightbox={(project) => setActiveLightbox(project)}
         />
-      </section>
-
-      {/* 8. LIVE WEBSITES HIGHLIGHT DECK */}
-      <section className="max-w-6xl mx-auto px-6 md:px-12 space-y-8">
-        <div className="p-8 md:p-12 rounded-3xl bg-neutral-950/80 border border-white/10 backdrop-blur-2xl space-y-8 shadow-2xl">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <h3 className="text-2xl md:text-4xl font-display font-black text-white">
-              LIVE CLIENT PLATFORMS.
-            </h3>
-            <Link
-              href="/work/web-development"
-              className="px-6 py-3 rounded-full bg-[var(--accent,#E5262B)] hover:bg-[var(--accent-hover,#ff3338)] text-white font-bold text-xs font-mono uppercase tracking-wider transition-colors shadow-lg whitespace-nowrap"
-            >
-              See All Web Projects
-            </Link>
-          </div>
-
-          {/* Visual Interactive Website Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-4">
-            {liveWebsites.map((site) => (
-              <Link
-                key={site.url}
-                href={site.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cursor="View"
-                className="group rounded-2xl border border-white/10 bg-black/40 hover:bg-black/70 hover:border-[var(--accent,#E5262B)]/60 transition-all overflow-hidden flex flex-col shadow-lg hover:-translate-y-1"
-              >
-                {/* Visual Screenshot Thumbnail */}
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-neutral-950 border-b border-white/10">
-                  <Image
-                    src={site.image}
-                    alt={site.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 240px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-2 right-2 p-1.5 rounded-full bg-black/60 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                    <ExternalLink className="w-3 h-3 text-[var(--accent,#E5262B)]" />
-                  </div>
-                </div>
-
-                <div className="p-3.5 space-y-1 flex-1 flex flex-col justify-between">
-                  <div>
-                    <span className="text-[10px] font-mono text-[var(--accent,#E5262B)] font-bold uppercase">
-                      {site.category}
-                    </span>
-                    <h4 className="text-xs font-bold text-white group-hover:text-[var(--accent,#E5262B)] transition-colors truncate">
-                      {site.name}
-                    </h4>
-                  </div>
-                  <div className="flex items-center justify-between text-[11px] font-mono text-neutral-400 pt-2 border-t border-white/5">
-                    <span>Live Portal</span>
-                    <ArrowUpRight className="w-3 h-3 group-hover:text-[var(--accent,#E5262B)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* ============================================================ */}
