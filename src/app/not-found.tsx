@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="text-8xl md:text-9xl font-black text-[var(--accent,#E5262B)] tracking-tighter">
         404
       </div>
-      <h1 className="text-2xl md:text-4xl font-bold text-neutral-900 dark:text-white">
+      <h1 className="text-2xl md:text-4xl font-bold text-white">
         Coordinates Lost in Space
       </h1>
       <p className="text-sm text-neutral-500 max-w-md">

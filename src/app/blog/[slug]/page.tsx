@@ -58,18 +58,18 @@ export default async function BlogPostPage({ params }: Props) {
           </span>
         </div>
 
-        <h1 className="text-3xl md:text-5xl font-black text-neutral-900 dark:text-white leading-tight">
+        <h1 className="text-3xl md:text-5xl font-black text-white leading-tight">
           {post.title}
         </h1>
 
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 italic border-l-2 border-[var(--accent,#E5262B)] pl-4">
+        <p className="text-lg text-neutral-300 italic border-l-2 border-[var(--accent,#E5262B)] pl-4">
           {post.excerpt}
         </p>
       </div>
 
       {/* 600+ word deep-dive content */}
-      <div className="prose dark:prose-invert max-w-none space-y-6 text-base text-neutral-700 dark:text-neutral-300 leading-relaxed border-t border-black/10 dark:border-white/10 pt-8">
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-white">
+      <div className="prose prose-invert max-w-none space-y-6 text-base text-neutral-300 leading-relaxed border-t border-white/10 pt-8">
+        <h2 className="text-2xl font-bold text-white">
           1. The Anatomy of Modern Audience Attention
         </h2>
         <p>
@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: Props) {
           During this split-second window, the brain does not read paragraphs; it scans for emotional salience, visual contrast, and immediate cognitive relevance. If the stimulus is generic, the viewer&apos;s thumb executes the scroll reflex automatically.
         </p>
 
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-white">
+        <h2 className="text-2xl font-bold text-white">
           2. The Deconstructed Framework: Signal vs Noise
         </h2>
         <p>
@@ -89,14 +89,14 @@ export default async function BlogPostPage({ params }: Props) {
           In web engineering, the exact same principle applies. We strip out unnecessary third-party tracking scripts, render our HTML at build time using Next.js App Router, and ensure the Largest Contentful Paint (LCP) element appears instantaneously without layout shift. When speed and clarity align, algorithms and humans reward the experience simultaneously.
         </p>
 
-        <div className="p-6 rounded-2xl bg-neutral-100 dark:bg-[#0c1017] border border-black/10 dark:border-white/10 space-y-2">
+        <div className="p-6 rounded-2xl bg-neutral-950/80 border border-white/10 space-y-2">
           <h4 className="font-mono text-xs uppercase tracking-wider text-[var(--accent,#E5262B)] font-bold">Key Operational Takeaway</h4>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          <p className="text-sm text-neutral-300">
             Never duplicate information across complementary channels. Your thumbnail should complete your title, not repeat it; your website animations should guide the visitor&apos;s eye directly into the call-to-action button, not distract them from it.
           </p>
         </div>
 
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-white">
+        <h2 className="text-2xl font-bold text-white">
           3. Quantifying Real World Results
         </h2>
         <p>
@@ -105,9 +105,9 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* Internal Navigation to Services & Contact */}
-      <div className="p-8 rounded-3xl bg-neutral-100 dark:bg-[#0c1017] border border-black/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="p-8 rounded-3xl bg-neutral-950/80 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div>
-          <h4 className="font-bold text-neutral-900 dark:text-white">Interested in implementing these systems?</h4>
+          <h4 className="font-bold text-white">Interested in implementing these systems?</h4>
           <p className="text-xs text-neutral-500 mt-1">Explore our end-to-end production retainers and audit services.</p>
         </div>
         <Link

@@ -28,10 +28,10 @@ export default function ThumbnailDesignPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-[var(--accent,#E5262B)]/10 text-[var(--accent,#E5262B)] border border-[var(--accent,#E5262B)]/20">
             Category 02 / 05
           </div>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight text-neutral-900 dark:text-white">
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">
             {category.name}: Visual CTR Psychology
           </h1>
-          <p className="text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          <p className="text-xl text-neutral-300 leading-relaxed">
             {category.description}
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function ThumbnailDesignPage() {
             <Zap className="w-4 h-4" />
             <span>Benchmark Impact</span>
           </div>
-          <div className="text-3xl font-black text-neutral-900 dark:text-white">
+          <div className="text-3xl font-black text-white">
             {category.statsTeaser}
           </div>
           <p className="text-xs text-neutral-500 leading-relaxed">
@@ -51,9 +51,9 @@ export default function ThumbnailDesignPage() {
       </div>
 
       {/* 600+ word strategy breakdown */}
-      <div className="prose dark:prose-invert max-w-none grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-y border-black/10 dark:border-white/10 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+      <div className="prose prose-invert max-w-none grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-y border-white/10 text-sm leading-relaxed text-neutral-300">
         <div className="space-y-3">
-          <h3 className="text-lg font-bold text-neutral-900 dark:text-white flex items-center gap-2">
+          <h3 className="text-lg font-bold text-white flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[var(--accent,#E5262B)]" />
             The 120-Pixel Test
           </h3>
@@ -66,7 +66,7 @@ export default function ThumbnailDesignPage() {
         </div>
 
         <div className="space-y-3">
-          <h3 className="text-lg font-bold text-neutral-900 dark:text-white flex items-center gap-2">
+          <h3 className="text-lg font-bold text-white flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[var(--accent,#E5262B)]" />
             Curiosity Gap & Title Complement
           </h3>
@@ -79,7 +79,7 @@ export default function ThumbnailDesignPage() {
         </div>
 
         <div className="space-y-3">
-          <h3 className="text-lg font-bold text-neutral-900 dark:text-white flex items-center gap-2">
+          <h3 className="text-lg font-bold text-white flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[var(--accent,#E5262B)]" />
             3D Specular Depth & Rim Lighting
           </h3>
@@ -94,7 +94,7 @@ export default function ThumbnailDesignPage() {
 
       <div className="space-y-8">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-black text-neutral-900 dark:text-white">
+          <h2 className="text-2xl font-black text-white">
             Thumbnail Case Studies & Packs
           </h2>
           <span className="text-xs font-mono text-neutral-500">

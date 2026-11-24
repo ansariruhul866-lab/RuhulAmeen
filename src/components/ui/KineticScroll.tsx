@@ -37,11 +37,11 @@ export function KineticScroll({ text, subtext }: KineticScrollProps) {
   return (
     <div
       ref={containerRef}
-      className="relative overflow-hidden py-12 border-y border-black/5 dark:border-white/5 select-none"
+      className="relative overflow-hidden py-12 border-y border-white/10 select-none"
     >
       <div
         ref={textRef}
-        className="flex whitespace-nowrap text-5xl md:text-8xl font-black uppercase tracking-tighter text-neutral-900/10 dark:text-white/10"
+        className="flex whitespace-nowrap text-5xl md:text-8xl font-black uppercase tracking-tighter text-white/10"
       >
         <span className="mr-8">{text}</span>
         <span className="mr-8 text-[var(--accent,#E5262B)]/40">•</span>

@@ -51,22 +51,22 @@ export function AnatomyViewer({ image, title, anatomy }: AnatomyViewerProps) {
   const isWebsite = image.includes('/images/websites/');
 
   return (
-    <div className="space-y-8 rounded-3xl border border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-[#0c1017] p-6 md:p-10">
+    <div className="space-y-8 rounded-3xl border border-white/10 bg-neutral-950/80 p-6 md:p-10">
       <div className="space-y-2">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-[var(--accent,#E5262B)]/10 text-[var(--accent,#E5262B)]">
           Signature Feature
         </div>
-        <h3 className="text-2xl font-black text-neutral-900 dark:text-white">
+        <h3 className="text-2xl font-black text-white">
           Case Study Anatomy: Deconstructed Architecture
         </h3>
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+        <p className="text-sm text-neutral-300">
           How individual creative choices, technical levers, and distribution mechanics compound into measurable outcomes.
         </p>
       </div>
 
       {/* Main Image with Annotation Overlays - dynamically sized to screenshot ratio */}
       <div
-        className={`relative w-full rounded-2xl overflow-hidden bg-black border border-black/10 dark:border-white/10 shadow-xl ${
+        className={`relative w-full rounded-2xl overflow-hidden bg-black border border-white/10 shadow-xl ${
           isWebsite ? 'aspect-[1024/470]' : 'aspect-[16/9]'
         }`}
         style={{ aspectRatio: isWebsite ? '1024 / 470' : '16 / 9' }}
@@ -110,7 +110,7 @@ export function AnatomyViewer({ image, title, anatomy }: AnatomyViewerProps) {
                   {step.label}
                 </h4>
               </div>
-              <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed font-medium">
+              <p className="text-xs text-neutral-300 leading-relaxed font-medium">
                 {step.desc}
               </p>
             </div>

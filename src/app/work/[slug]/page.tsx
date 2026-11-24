@@ -73,7 +73,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
           )}
         </div>
 
-        <h1 className="text-3xl md:text-5xl font-black text-neutral-900 dark:text-white leading-tight">
+        <h1 className="text-3xl md:text-5xl font-black text-white leading-tight">
           {project.title}
         </h1>
 
@@ -95,7 +95,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
 
       {/* Stats Callout Bar */}
       {project.stats && (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-black/10 dark:border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-6 rounded-2xl bg-neutral-950/80 border border-white/10">
           {project.stats.map((stat) => (
             <div key={stat.label} className="space-y-1">
               <div className="text-2xl md:text-3xl font-black text-[var(--accent,#E5262B)]">{stat.value}</div>
@@ -137,9 +137,9 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
       )}
 
       {/* Deep-Dive Problem, Action, Result Sections (600+ words context) */}
-      <div className="space-y-12 text-neutral-700 dark:text-neutral-300 leading-relaxed text-base">
+      <div className="space-y-12 text-neutral-300 leading-relaxed text-base">
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-white flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
             The Core Challenge & Context
           </h2>
@@ -152,7 +152,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-white flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
             Strategic Action & Implementation
           </h2>
@@ -163,7 +163,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
             We implemented a multi-stage execution framework: diagnosing cognitive drop-offs, standardizing asset delivery pipelines, and engineering micro-interactions that validate each user or viewer step.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-            <div className="p-4 rounded-xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-black/40 space-y-2">
+            <div className="p-4 rounded-xl border border-white/10 bg-white/[0.03] space-y-2">
               <h4 className="text-xs font-mono font-bold uppercase text-[var(--accent,#E5262B)]">Applied Tools & Stack</h4>
               <div className="flex flex-wrap gap-2">
                 {project.tools.map((tool) => (
@@ -173,7 +173,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
                 ))}
               </div>
             </div>
-            <div className="p-4 rounded-xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-black/40 space-y-2">
+            <div className="p-4 rounded-xl border border-white/10 bg-white/[0.03] space-y-2">
               <h4 className="text-xs font-mono font-bold uppercase text-emerald-500">Execution Velocity</h4>
               <p className="text-xs text-neutral-500">
                 Delivered in targeted sprints with end-to-end performance benchmarks and zero regression across mobile browsers.
@@ -183,11 +183,11 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
+          <h2 className="text-2xl font-bold text-white flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
             Quantified Business & Algorithmic Result
           </h2>
-          <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-200 space-y-2">
+          <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-200 space-y-2">
             <div className="flex items-center gap-2 font-bold text-sm uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
               <CheckCircle2 className="w-5 h-5" />
               <span>Verified Outcome</span>

@@ -45,10 +45,10 @@ export default function BlogIndexPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-[var(--accent,#E5262B)]/10 text-[var(--accent,#E5262B)] border border-[var(--accent,#E5262B)]/20">
           Knowledge Base & Case Notes
         </div>
-        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-neutral-900 dark:text-white">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">
           Tactical Insights on Storytelling, Code & Organic Scale.
         </h1>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        <p className="text-lg text-neutral-300 leading-relaxed">
           Unfiltered case studies, algorithmic analyses, and production workflows written directly from the trenches of video editing timelines and code repositories.
         </p>
       </div>
@@ -58,7 +58,7 @@ export default function BlogIndexPage() {
         {BLOG_POSTS.map((post) => (
           <article
             key={post.slug}
-            className="group p-8 rounded-3xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c1017] hover:border-[var(--accent,#E5262B)]/50 transition-all shadow-sm"
+            className="group p-8 rounded-3xl border border-white/10 bg-neutral-950/80 hover:border-[var(--accent,#E5262B)]/50 transition-all shadow-sm"
           >
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-neutral-500 mb-3">
               <span className="px-2.5 py-0.5 rounded bg-[var(--accent,#E5262B)]/10 text-[var(--accent,#E5262B)] font-semibold">
@@ -77,16 +77,16 @@ export default function BlogIndexPage() {
             </div>
 
             <Link href={`/blog/${post.slug}`}>
-              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white group-hover:text-[var(--accent,#E5262B)] transition-colors leading-snug">
+              <h2 className="text-2xl md:text-3xl font-bold text-white group-hover:text-[var(--accent,#E5262B)] transition-colors leading-snug">
                 {post.title}
               </h2>
             </Link>
 
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-3 leading-relaxed">
+            <p className="text-sm text-neutral-300 mt-3 leading-relaxed">
               {post.excerpt}
             </p>
 
-            <div className="pt-6 mt-6 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
+            <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
               <Link
                 href={`/blog/${post.slug}`}
                 className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider font-bold text-[var(--accent,#E5262B)] group-hover:underline"

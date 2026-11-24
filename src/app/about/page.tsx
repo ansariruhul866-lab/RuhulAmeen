@@ -18,10 +18,10 @@ export default function AboutPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-[var(--accent,#E5262B)]/10 text-[var(--accent,#E5262B)] border border-[var(--accent,#E5262B)]/20">
             About Ruhul Ameen
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-neutral-900 dark:text-white leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
             Social Media Manager, Video Editor &amp; Frontend Developer.
           </h1>
-          <p className="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          <p className="text-base text-neutral-300 leading-relaxed">
             Creative and performance-driven professional based in <strong>Lucknow, India</strong>. Experienced in engineering captivating short-form content, high-retention video storytelling, conversion-focused social media campaigns, and responsive web applications with Next.js &amp; React.
           </p>
           
@@ -112,39 +112,39 @@ export default function AboutPage() {
       </div>
 
       {/* Verified Experience & Education Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-black/10 dark:border-white/10 pt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/10 pt-12">
         {/* Work Experience */}
         <div className="space-y-6">
-          <div className="flex items-center gap-2 text-sm font-bold text-neutral-900 dark:text-white uppercase font-mono tracking-wider">
+          <div className="flex items-center gap-2 text-sm font-bold text-white uppercase font-mono tracking-wider">
             <Briefcase className="w-4 h-4 text-[var(--accent,#E5262B)]" />
             <span>Professional Experience</span>
           </div>
 
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-neutral-50 dark:bg-white/[0.03] space-y-2">
+            <div className="p-6 rounded-2xl border border-white/10 bg-white/[0.03] space-y-2">
               <div className="flex items-center justify-between">
-                <h3 className="font-bold text-base text-neutral-900 dark:text-white">
+                <h3 className="font-bold text-base text-white">
                   Video Editor
                 </h3>
                 <span className="text-[11px] font-mono text-[var(--accent,#E5262B)] font-bold">May 2026 – Present</span>
               </div>
               <div className="text-xs font-mono text-neutral-500">Expansio Digital Marketing</div>
-              <ul className="text-xs text-neutral-600 dark:text-neutral-400 space-y-1.5 list-disc pl-4 pt-2 leading-relaxed">
+              <ul className="text-xs text-neutral-300 space-y-1.5 list-disc pl-4 pt-2 leading-relaxed">
                 <li>Edited professional video content for healthcare practices, doctors, music companies, and commercial animation projects.</li>
                 <li>Engineered high-retention short-form videos optimized for Instagram Reels, TikTok, and YouTube Shorts.</li>
                 <li>Applied storytelling hooks, kinetic motion effects, sound design, and retention-maximizing editing techniques.</li>
               </ul>
             </div>
 
-            <div className="p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-neutral-50 dark:bg-white/[0.03] space-y-2">
+            <div className="p-6 rounded-2xl border border-white/10 bg-white/[0.03] space-y-2">
               <div className="flex items-center justify-between">
-                <h3 className="font-bold text-base text-neutral-900 dark:text-white">
+                <h3 className="font-bold text-base text-white">
                   Freelance Social Media Manager &amp; Content Creator
                 </h3>
                 <span className="text-[11px] font-mono text-neutral-400 font-bold">Dec 2025 – Present</span>
               </div>
               <div className="text-xs font-mono text-neutral-500">Independent Creator &amp; Brand Consultant</div>
-              <ul className="text-xs text-neutral-600 dark:text-neutral-400 space-y-1.5 list-disc pl-4 pt-2 leading-relaxed">
+              <ul className="text-xs text-neutral-300 space-y-1.5 list-disc pl-4 pt-2 leading-relaxed">
                 <li>Managed end-to-end social media channels for real estate brands, healthcare clinics, and digital businesses.</li>
                 <li>Authored hooks, promotional reels, branding creatives, and conversion-focused captions.</li>
                 <li>Expanded audience reach and follower engagement through rigorous trend research and content psychology.</li>
@@ -155,14 +155,14 @@ export default function AboutPage() {
 
         {/* Education & Core Capabilities */}
         <div className="space-y-6">
-          <div className="flex items-center gap-2 text-sm font-bold text-neutral-900 dark:text-white uppercase font-mono tracking-wider">
+          <div className="flex items-center gap-2 text-sm font-bold text-white uppercase font-mono tracking-wider">
             <GraduationCap className="w-4 h-4 text-[var(--accent,#E5262B)]" />
             <span>Education &amp; Credentials</span>
           </div>
 
-          <div className="p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-neutral-50 dark:bg-white/[0.03] space-y-3">
+          <div className="p-6 rounded-2xl border border-white/10 bg-white/[0.03] space-y-3">
             <div className="flex items-center justify-between">
-              <h3 className="font-bold text-base text-neutral-900 dark:text-white">
+              <h3 className="font-bold text-base text-white">
                 B.Tech in Computer Science &amp; Engineering
               </h3>
               <span className="text-[11px] font-mono text-emerald-400 font-bold">Graduation 2025</span>
@@ -170,13 +170,13 @@ export default function AboutPage() {
             <div className="text-xs font-mono text-neutral-500">
               Maharishi University of Information Technology, Lucknow
             </div>
-            <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed pt-1">
+            <p className="text-xs text-neutral-300 leading-relaxed pt-1">
               Solid engineering foundation covering algorithms, data structures, responsive web architectures, database design, and software systems.
             </p>
           </div>
 
           {/* Languages & Impact Stats */}
-          <div className="p-6 rounded-2xl border border-black/10 dark:border-white/10 bg-neutral-50 dark:bg-white/[0.03] space-y-4">
+          <div className="p-6 rounded-2xl border border-white/10 bg-white/[0.03] space-y-4">
             <div className="text-xs font-mono uppercase text-neutral-400 font-bold">
               Languages &amp; Production Proof
             </div>
@@ -195,7 +195,7 @@ export default function AboutPage() {
       </div>
 
       {/* Core Skills Breakdown (From CV) */}
-      <div className="space-y-6 border-t border-black/10 dark:border-white/10 pt-12">
+      <div className="space-y-6 border-t border-white/10 pt-12">
         <h3 className="text-sm font-mono uppercase tracking-wider text-neutral-400 font-bold">
           Core Skills &amp; Domain Expertise
         </h3>
@@ -244,7 +244,7 @@ export default function AboutPage() {
       </div>
 
       {/* Production Tech Marquee */}
-      <div className="space-y-4 border-t border-black/10 dark:border-white/10 pt-12">
+      <div className="space-y-4 border-t border-white/10 pt-12">
         <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 font-bold">
           Mastered Tools &amp; Frameworks
         </h3>
@@ -252,7 +252,7 @@ export default function AboutPage() {
           {TOOLS_LIST.map((tool) => (
             <span
               key={tool}
-              className="px-4 py-2 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-neutral-900 text-xs font-mono font-medium text-neutral-800 dark:text-neutral-200"
+              className="px-4 py-2 rounded-xl border border-white/10 bg-neutral-900 text-xs font-mono font-medium text-neutral-200"
             >
               {tool}
             </span>

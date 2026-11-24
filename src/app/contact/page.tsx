@@ -26,10 +26,10 @@ export default function ContactPage() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-[var(--accent,#E5262B)]/10 text-[var(--accent,#E5262B)] border border-[var(--accent,#E5262B)]/20">
           Initiate Collaboration
         </div>
-        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-neutral-900 dark:text-white">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">
           Let&apos;s Build Something Memorable.
         </h1>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        <p className="text-lg text-neutral-300 leading-relaxed">
           Whether you need a full video retention overhaul, high-converting 3D thumbnails, a bespoke Next.js web application, or an automated AI workflow, I am currently accepting select projects.
         </p>
       </div>
@@ -43,10 +43,10 @@ export default function ContactPage() {
               <MessageSquare className="w-4 h-4" />
               <span>Fastest Response (Under 2h)</span>
             </div>
-            <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
+            <h3 className="text-2xl font-bold text-white">
               Instant WhatsApp Chat
             </h3>
-            <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            <p className="text-xs text-neutral-300 leading-relaxed">
               Skip email back-and-forth. Send me a quick voice note or text with your timeline and goals.
             </p>
             <Link
@@ -61,26 +61,26 @@ export default function ContactPage() {
             </Link>
           </div>
 
-          <div className="space-y-4 text-sm text-neutral-600 dark:text-neutral-400">
+          <div className="space-y-4 text-sm text-neutral-300">
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10">
+              <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
                 <Mail className="w-4 h-4 text-[var(--accent,#E5262B)]" />
               </div>
               <div>
                 <div className="text-xs font-mono uppercase text-neutral-400">Direct Email</div>
-                <Link href="mailto:ruhulansari7786@gmail.com" className="font-semibold text-neutral-900 dark:text-white hover:text-[var(--accent,#E5262B)]">
+                <Link href="mailto:ruhulansari7786@gmail.com" className="font-semibold text-white hover:text-[var(--accent,#E5262B)]">
                   ruhulansari7786@gmail.com
                 </Link>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10">
+              <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
                 <MapPin className="w-4 h-4 text-[var(--accent,#E5262B)]" />
               </div>
               <div>
                 <div className="text-xs font-mono uppercase text-neutral-400">Location</div>
-                <div className="font-semibold text-neutral-900 dark:text-white">
+                <div className="font-semibold text-white">
                   Lucknow, Uttar Pradesh, India
                 </div>
               </div>
@@ -89,13 +89,13 @@ export default function ContactPage() {
         </div>
 
         {/* Right Column: 3-Field Frictionless Form */}
-        <div className="md:col-span-7 p-8 md:p-10 rounded-3xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c1017] shadow-xl">
+        <div className="md:col-span-7 p-8 md:p-10 rounded-3xl border border-white/10 bg-neutral-950/80 shadow-xl">
           {submitted ? (
             <div className="text-center py-12 space-y-4 animate-in zoom-in-95 duration-300">
               <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 mx-auto flex items-center justify-center">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
+              <h3 className="text-2xl font-bold text-white">
                 Message Dispatched!
               </h3>
               <p className="text-sm text-neutral-500 max-w-sm mx-auto">
@@ -104,7 +104,7 @@ export default function ContactPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
+              <h3 className="text-2xl font-bold text-white">
                 Quick Project Brief
               </h3>
               <p className="text-xs text-neutral-500">
@@ -113,7 +113,7 @@ export default function ContactPage() {
 
               {/* Field 1: Name */}
               <div className="space-y-2">
-                <label className="text-xs font-mono uppercase tracking-wider text-neutral-700 dark:text-neutral-300 font-semibold">
+                <label className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-semibold">
                   1. Your Name / Company
                 </label>
                 <input
@@ -122,13 +122,13 @@ export default function ContactPage() {
                   placeholder="e.g. Alex Rivera or Horizon Media"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-black/10 dark:border-white/10 bg-neutral-50 dark:bg-neutral-900/50 text-neutral-900 dark:text-white text-sm focus:outline-none focus:border-[var(--accent,#E5262B)] transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/[0.04] text-white text-sm focus:outline-none focus:border-[var(--accent,#E5262B)] transition-colors"
                 />
               </div>
 
               {/* Field 2: Email */}
               <div className="space-y-2">
-                <label className="text-xs font-mono uppercase tracking-wider text-neutral-700 dark:text-neutral-300 font-semibold">
+                <label className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-semibold">
                   2. Email Address
                 </label>
                 <input
@@ -137,13 +137,13 @@ export default function ContactPage() {
                   placeholder="alex@company.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-black/10 dark:border-white/10 bg-neutral-50 dark:bg-neutral-900/50 text-neutral-900 dark:text-white text-sm focus:outline-none focus:border-[var(--accent,#E5262B)] transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/[0.04] text-white text-sm focus:outline-none focus:border-[var(--accent,#E5262B)] transition-colors"
                 />
               </div>
 
               {/* Field 3: Message / Scope */}
               <div className="space-y-2">
-                <label className="text-xs font-mono uppercase tracking-wider text-neutral-700 dark:text-neutral-300 font-semibold">
+                <label className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-semibold">
                   3. Project Scope & Timeline
                 </label>
                 <textarea
@@ -152,7 +152,7 @@ export default function ContactPage() {
                   placeholder="Briefly describe what you are looking to achieve: YouTube channel revamp, web app build, or AI automation..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-black/10 dark:border-white/10 bg-neutral-50 dark:bg-neutral-900/50 text-neutral-900 dark:text-white text-sm focus:outline-none focus:border-[var(--accent,#E5262B)] transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/[0.04] text-white text-sm focus:outline-none focus:border-[var(--accent,#E5262B)] transition-colors"
                 />
               </div>
 

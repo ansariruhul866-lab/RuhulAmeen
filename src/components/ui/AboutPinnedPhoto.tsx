@@ -60,6 +60,7 @@ export function AboutPinnedPhoto() {
             src="/images/profile.jpg"
             alt="Ruhul Ameen — Creative Lead"
             fill
+            unoptimized
             sizes="(max-width: 768px) 280px, 320px"
             priority
             className="object-cover object-top filter contrast-[1.04] brightness-[1.02] transition-transform duration-500 hover:scale-105"

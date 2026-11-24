@@ -69,14 +69,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${syne.variable}`}>
-      <body className="antialiased selection:bg-[var(--accent,#E5262B)] selection:text-white">
+    <html lang="en" suppressHydrationWarning className={`dark ${inter.variable} ${syne.variable}`}>
+      <body className="antialiased selection:bg-[var(--accent,#E5262B)] selection:text-white bg-[#0A0A0B] text-white">
         <Preloader />
         <JsonLd />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          forcedTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <SmoothScroll />
